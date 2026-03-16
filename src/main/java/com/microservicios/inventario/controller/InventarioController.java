@@ -1,6 +1,7 @@
 package com.microservicios.inventario.controller;
 
 import java.util.List;
+
 import org.springframework.web.bind.annotation.*;
 
 import com.microservicios.inventario.model.Producto;
@@ -22,7 +23,12 @@ public class InventarioController {
     }
 
     @PostMapping
-    public Producto agregarProducto(@RequestBody Producto producto) {
+    public Producto crearProducto(@RequestBody Producto producto) {
         return service.guardarProducto(producto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarProducto(@PathVariable Long id) {
+        service.eliminarProducto(id);
     }
 }

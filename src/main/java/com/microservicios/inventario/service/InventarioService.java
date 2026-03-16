@@ -1,7 +1,9 @@
 package com.microservicios.inventario.service;
 
 import java.util.List;
+
 import org.springframework.stereotype.Service;
+
 import com.microservicios.inventario.model.Producto;
 import com.microservicios.inventario.repository.InventarioRepository;
 
@@ -20,5 +22,9 @@ public class InventarioService {
 
     public Producto guardarProducto(Producto producto) {
         return repository.save(producto);
+    }
+
+    public void eliminarProducto(Long id) {
+        repository.deleteById(id);
     }
 }
