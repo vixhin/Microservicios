@@ -1,0 +1,58 @@
+package com.microservicios.pedidos.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "pedidos")
+public class Pedidos {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long usuarioId;
+    private Long productoId;
+    private int cantidad;
+
+    public Pedidos() {
+    }
+
+    public Pedidos(Long id, Long usuarioId, Long productoId, int cantidad) {
+        this.id = id;
+        this.usuarioId = usuarioId;
+        this.productoId = productoId;
+        this.cantidad = cantidad;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(Long usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public Long getProductoId() {
+        return productoId;
+    }
+
+    public void setProductoId(Long productoId) {
+        this.productoId = productoId;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+}
